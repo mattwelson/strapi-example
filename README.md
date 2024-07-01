@@ -4,12 +4,11 @@ note: This project was started with love by [Trecia](https://github.com/TreciaKS
 
 ![demo-site](https://user-images.githubusercontent.com/6153188/231865321-0da5e81f-4832-4cce-bcd1-ecd79e9b9cc3.gif)
 
-
 ## Hello Strapi
 
 Strapi Community Edition is a free and open-source headless CMS enabling you to manage any content, anywhere.
 
-- **Self-hosted or Cloud**: You can host and scale Strapi projects the way you want. You can save time by deploying to [Strapi Cloud](https://cloud.strapi.io/signups?source=github1) or deploy to the hosting platform you want**: AWS, Azure, Google Cloud, DigitalOcean.
+- **Self-hosted or Cloud**: You can host and scale Strapi projects the way you want. You can save time by deploying to [Strapi Cloud](https://cloud.strapi.io/signups?source=github1) or deploy to the hosting platform you want\*\*: AWS, Azure, Google Cloud, DigitalOcean.
 - **Modern Admin Pane**: Elegant, entirely customizable and a fully extensible admin panel.
 - **Multi-database support**: You can choose the database you prefer: PostgreSQL, MySQL, MariaDB, and SQLite.
 - **Customizable**: You can quickly build your logic by fully customizing APIs, routes, or plugins to fit your needs perfectly.
@@ -28,7 +27,6 @@ Strapi Community Edition is a free and open-source headless CMS enabling you to 
 
 You can unlock additional features such as SSO, Audit Logs, Review Workflows in [Strapi Cloud](https://cloud.strapi.io/login?source=github1) or [Strapi Enterprise](https://strapi.io/enterprise?source=github1).
 
-
 ## Getting Started
 
 If you prefer videos that guide you through the setup process you can find them [here](https://github.com/strapi/nextjs-corporate-starter/issues/71)
@@ -44,7 +42,7 @@ If you prefer videos that guide you through the setup process you can find them 
 2. Run `setup` command to setup frontend and backend dependencies:
 
 ```bash
-  yarn setup
+  bun run setup
 ```
 
 3. Next, navigate to your `/backend` directory and set up your `.env` file. You can use the `.env.example` file as reference:
@@ -62,8 +60,8 @@ TRANSFER_TOKEN_SALT=tobemodified
 4. Start your project by running the following command:
 
 ```bash
-  yarn build
-  yarn develop
+  bun run build
+  bun run develop
 ```
 
 You will be prompted to create your first admin user.
@@ -85,7 +83,7 @@ In the root of our project we have our `seed-data.tar.gz` file. We will use it t
 2. Run the following command to seed your data:
 
 ```bash
-  yarn strapi import -f ../seed-data.tar.gz
+  bun run strapi import -f ../seed-data.tar.gz
 ```
 
 ![after-import](https://user-images.githubusercontent.com/6153188/231865491-05cb5818-a0d0-49ce-807e-a879f7e3070c.gif)
@@ -159,7 +157,7 @@ In Permissions lets give the following access.
 
 Add your token to your `NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN` variable name in the `.env` file.
 
-Once your environment variables are set you can start your frontend application by running `yarn dev`.
+Once your environment variables are set you can start your frontend application by running `bun run dev`.
 
 You should now see your Next JS frontend.
 
@@ -174,21 +172,22 @@ You can find the setting inside the `package.json` file inside the root folder.
 ```json
 {
   "scripts": {
-    "frontend": "yarn dev --prefix ../frontend/",
-    "backend": "yarn dev --prefix ../backend/",
+    "frontend": "bun run dev --prefix ../frontend/",
+    "backend": "bun run dev --prefix ../backend/",
     "clear": "cd frontend && rm -rf .next && rm -rf cache",
-    "setup:frontend": "cd frontend && yarn",
-    "setup:backend": "cd backend && yarn",
-    "setup": "yarn install && yarn setup:frontend && yarn setup:backend",
-    "dev": "yarn clear && concurrently \"cd frontend && yarn dev\" \"cd backend && yarn develop\""
+    "setup:frontend": "cd frontend && bun run",
+    "setup:backend": "cd backend && bun run",
+    "setup": "bun run install && bun run setup:frontend && bun run setup:backend",
+    "dev": "bun run clear && concurrently \"cd frontend && bun run dev\" \"cd backend && bun run develop\""
   },
   "dependencies": {
     "concurrently": "^7.6.0"
   }
 }
 ```
-Go to the root folder and install the package, `yarn`
-You can start both apps by running `yarn dev`.
+
+Go to the root folder and install the package, `bun run`
+You can start both apps by running `bun run dev`.
 
 ## Conclusion
 
@@ -319,14 +318,15 @@ Remember, everyone was new to open-source at some point. If you're unsure about 
 If you find yourself contributing frequently, we've provided a script in the package.json to help keep your local project synchronized with the main branch of the upstream (original) project. Simply execute the following command:
 
 ```bash
-yarn repo:upstream
+bun run repo:upstream
 ```
 
 ## FAQ
 
 ### How do I add additional pages?
+
 Check out [this video](https://youtu.be/EoVrTNA3geM) where I will guide on how to do this.
 
 ### How do I update my Strapi version?
-Check out this [this issue comment](https://github.com/strapi/nextjs-corporate-starter/issues/17#issuecomment-1558149967)
 
+Check out this [this issue comment](https://github.com/strapi/nextjs-corporate-starter/issues/17#issuecomment-1558149967)

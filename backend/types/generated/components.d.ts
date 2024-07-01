@@ -421,6 +421,7 @@ export interface SharedQuote extends Schema.Component {
     title: Attribute.String;
     body: Attribute.Text & Attribute.Required;
     author: Attribute.String;
+    source: Attribute.String;
   };
 }
 

@@ -16,6 +16,9 @@
     },
     "author": {
       "type": "string"
+    },
+    "source": {
+      "type": "string"
     }
   }
 }
