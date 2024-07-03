@@ -1,4 +1,19 @@
-# Strapi Starter Next 14, Tailwind, Typescript and Strapi
+# Notes to be written up
+
+- Adding turbo support, changes all the commands from being in this root level package.json and reorders the directories
+- Using `bun` which by default doesn't add turbo to the path:
+
+  ```bash .zshrc
+    # Add bun to path
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$BUN_INSTALL/bin:$PATH"
+  ```
+
+- Add a description of each project, including the infra side of things and how it works
+- backend is a strapi project with (hopefully) a postgres db
+- frontend is a nextjs site using tailwind and shadcn
+
+## Strapi Starter Next 14, Tailwind, Typescript and Strapi
 
 note: This project was started with love by [Trecia](https://github.com/TreciaKS), [Daniel](https://github.com/malgamves) and [Paul](https://github.com/PaulBratslavsky). We were all new to Next 14 and Typescript. If you find any bugs or improvements feel free to create an issue. Thank you all for your support and participation.
 
