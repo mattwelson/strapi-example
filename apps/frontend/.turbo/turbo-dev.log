@@ -4,5 +4,12 @@
   - Environments: .env
 
  [32m[1m✓[22m[39m Starting...
-/bin/sh: yarn: command not found
- [32m[1m✓[22m[39m Ready in 1325ms
+ [32m[1m✓[22m[39m Ready in 1858ms
+ [37m[1m [22m[39m Reload env: .env
+ [37m[1m○[22m[39m Compiling /src/middleware ...
+ [32m[1m✓[22m[39m Compiled /src/middleware in 732ms (91 modules)
+ [37m[1m○[22m[39m Compiling /[lang] ...
+ [32m[1m✓[22m[39m Compiled /[lang] in 3.9s (738 modules)
+ GET /en [32m200[39m in 4707ms
+ [37m[1m○[22m[39m Compiling /[lang]/blog ...
+ [32m[1m✓[22m[39m Compiled /[lang]/blog in 2.4s (811 modules)

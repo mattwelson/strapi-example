@@ -1,7 +1,7 @@
 FROM oven/bun:1.1 as main
 # Installing libvips-dev for sharp Compatability
 RUN apt-get update && apt-get install libvips-dev -y
-ARG NODE_ENV=development
+ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 WORKDIR /opt/
 COPY ./package.json ./bun.lockb ./
@@ -12,4 +12,4 @@ COPY ./ .
 # to run build 
 RUN bun run build 
 EXPOSE 1337
-CMD ["bun", "run", "develop"]
+CMD ["bun", "start"]

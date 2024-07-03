@@ -1,5 +1,5 @@
 FROM oven/bun:1.1 as main
-ARG NODE_ENV=development
+ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 WORKDIR /opt/
 COPY ./package.json ./bun.lockb ./
@@ -9,5 +9,4 @@ WORKDIR /opt/app
 COPY ./ .
 RUN bun run build
 EXPOSE 3000
-# TODO: Add a bun run start version of this for "production" builds
-CMD ["bun", "run", "develop"]
+CMD ["node", ".next/standalone/server.js"]

@@ -5,8 +5,8 @@
   ],
   "scripts": {
     "clear": "cd apps/frontend && rm -rf .next && rm -rf cache",
-    "export": "cd apps/backend && bun run strapi export --no-encrypt -f ../seed-data",
-    "seed": "cd apps/backend && bun run strapi import -f ../seed-data.tar.gz"
+    "export": "cd apps/backend && bun run strapi export --no-encrypt -f ../../seed-data",
+    "seed": "cd apps/backend && bun run strapi import -f ../../seed-data.tar.gz"
   },
   "dependencies": {
     "concurrently": "^8.2.2",
