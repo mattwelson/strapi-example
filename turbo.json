@@ -3,12 +3,22 @@
     "dev": {
       "dependsOn": ["^dev"],
       "outputs": [".next/**", "!.next/cache/**"],
-      "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
+      "persistent": true
     },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
       "inputs": ["$TURBO_DEFAULT$", "!README.md"]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "inputs": ["$TURBO_DEFAULT$", "!README.md"],
+      "persistent": true
+    },
+    "lint": {
+      "persistent": true
     }
   }
 }

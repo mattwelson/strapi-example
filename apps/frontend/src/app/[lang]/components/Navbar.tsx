@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import Image from "next/image";
 
 interface NavLink {
   id: number;
@@ -94,7 +95,9 @@ export default function Navbar({
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Strapi</span>
-                {logoUrl && <img className="h-8 w-auto" src={logoUrl} alt="" />}
+                {logoUrl && (
+                  <Image className="h-8 w-auto" src={logoUrl} alt="" />
+                )}
               </a>
               <button
                 type="button"

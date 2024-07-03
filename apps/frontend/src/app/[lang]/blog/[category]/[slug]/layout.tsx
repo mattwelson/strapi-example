@@ -88,26 +88,26 @@ export default async function LayoutRoute({
   );
 }
 
-export async function generateStaticParams() {
-  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
-  const path = `/articles`;
-  const options = { headers: { Authorization: `Bearer ${token}` } };
-  const articleResponse = await fetchAPI(
-    path,
-    {
-      populate: ["category"],
-    },
-    options
-  );
+// export async function generateStaticParams() {
+//   const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
+//   const path = `/articles`;
+//   const options = { headers: { Authorization: `Bearer ${token}` } };
+//   const articleResponse = await fetchAPI(
+//     path,
+//     {
+//       populate: ["category"],
+//     },
+//     options
+//   );
 
-  return articleResponse.data.map(
-    (article: {
-      attributes: {
-        slug: string;
-        category: {
-          slug: string;
-        };
-      };
-    }) => ({ slug: article.attributes.slug, category: article.attributes.slug })
-  );
-}
+//   return articleResponse.data.map(
+//     (article: {
+//       attributes: {
+//         slug: string;
+//         category: {
+//           slug: string;
+//         };
+//       };
+//     }) => ({ slug: article.attributes.slug, category: article.attributes.slug })
+//   );
+// }
