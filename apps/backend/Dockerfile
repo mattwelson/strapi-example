@@ -9,6 +9,7 @@ ENV PATH /opt/node_modules/.bin:$PATH
 RUN bun install
 WORKDIR /opt/app
 COPY ./ .
-RUN bun run build
+# to run build 
+RUN bun run build 
 EXPOSE 1337
 CMD ["bun", "run", "develop"]
