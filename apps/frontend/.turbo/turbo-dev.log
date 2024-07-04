@@ -1,15 +1,11 @@
-[0m[2m[35m$[0m [2m[1mnext dev[0m
+
+> frontend@0.1.0 dev /Users/mattwelson/dtl/dtl.nz/nextjs-corporate-starter/apps/frontend
+> next dev
+
   [1m[38;2;173;127;168m▲ Next.js 14.2.4[39m[22m
   - Local:        http://localhost:3000
   - Environments: .env
 
  [32m[1m✓[22m[39m Starting...
- [32m[1m✓[22m[39m Ready in 1858ms
- [37m[1m [22m[39m Reload env: .env
- [37m[1m○[22m[39m Compiling /src/middleware ...
- [32m[1m✓[22m[39m Compiled /src/middleware in 732ms (91 modules)
- [37m[1m○[22m[39m Compiling /[lang] ...
- [32m[1m✓[22m[39m Compiled /[lang] in 3.9s (738 modules)
- GET /en [32m200[39m in 4707ms
- [37m[1m○[22m[39m Compiling /[lang]/blog ...
- [32m[1m✓[22m[39m Compiled /[lang]/blog in 2.4s (811 modules)
+ [32m[1m✓[22m[39m Ready in 1819ms
+[?25h

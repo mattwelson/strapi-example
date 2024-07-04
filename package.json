@@ -1,17 +1,14 @@
 {
   "name": "dtl",
-  "workspaces": [
-    "apps/*"
-  ],
+  "private": "true",
   "scripts": {
     "clear": "cd apps/frontend && rm -rf .next && rm -rf cache",
-    "export": "cd apps/backend && bun run strapi export --no-encrypt -f ../../seed-data",
-    "seed": "cd apps/backend && bun run strapi import -f ../../seed-data.tar.gz"
+    "export": "cd apps/backend && yarn strapi export --no-encrypt -f ../../seed-data",
+    "seed": "cd apps/backend && yarn strapi import -f ../../seed-data.tar.gz"
   },
   "dependencies": {
-    "concurrently": "^8.2.2",
     "npm-check-updates": "^16.14.15",
     "turbo": "^2.0.6"
   },
-  "packageManager": "bun@1.1.17"
+  "packageManager": "pnpm@9.2.0"
 }

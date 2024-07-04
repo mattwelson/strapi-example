@@ -1,6 +1,8 @@
 .tmp/
 .cache/
 .git/
+.next/
+.turbo/
 build/
 node_modules/
 data/

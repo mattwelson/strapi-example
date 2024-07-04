@@ -1,19 +1,12 @@
 # Notes to be written up
 
 - Adding turbo support, changes all the commands from being in this root level package.json and reorders the directories
-- Using `bun` which by default doesn't add turbo to the path:
-
-  ```bash .zshrc
-    # Add bun to path
-    export BUN_INSTALL="$HOME/.bun"
-    export PATH="$BUN_INSTALL/bin:$PATH"
-  ```
-
+- Using `yarn`
 - Add a description of each project, including the infra side of things and how it works
 - backend is a strapi project with (hopefully) a postgres db
 - frontend is a nextjs site using tailwind and shadcn
 - install can be done from the root to get the monorepo ready to run
-  `$ bun install`
+  `$ yarn`
   `$ turbo dev`
 
 ## Strapi Starter Next 14, Tailwind, Typescript and Strapi
@@ -57,10 +50,10 @@ If you prefer videos that guide you through the setup process you can find them 
   gh repo clone strapi/nextjs-corporate-starter
 ```
 
-2. Run `setup` command to setup frontend and backend dependencies:
+2. Run `yarn` command to setup frontend and backend dependencies:
 
 ```bash
-  bun run setup
+  yarn
 ```
 
 3. Next, navigate to your `/backend` directory and set up your `.env` file. You can use the `.env.example` file as reference:
@@ -78,8 +71,7 @@ TRANSFER_TOKEN_SALT=tobemodified
 4. Start your project by running the following command:
 
 ```bash
-  bun run build
-  bun run develop
+  turbo dev
 ```
 
 You will be prompted to create your first admin user.
@@ -101,7 +93,7 @@ In the root of our project we have our `seed-data.tar.gz` file. We will use it t
 2. Run the following command to seed your data:
 
 ```bash
-  bun run strapi import -f ../seed-data.tar.gz
+  yarn strapi import -f ../seed-data.tar.gz
 ```
 
 ![after-import](https://user-images.githubusercontent.com/6153188/231865491-05cb5818-a0d0-49ce-807e-a879f7e3070c.gif)
@@ -175,36 +167,21 @@ In Permissions lets give the following access.
 
 Add your token to your `NEXT_PUBLIC_STRAPI_FORM_SUBMISSION_TOKEN` variable name in the `.env` file.
 
-Once your environment variables are set you can start your frontend application by running `bun run dev`.
+Once your environment variables are set you can start your frontend application by running `turbo dev`.
 
 You should now see your Next JS frontend.
 
 ![frontend](https://user-images.githubusercontent.com/6153188/231865662-d870051f-4503-4a01-bc6b-635c7c5ca40d.png)
 
-## Start Both Projects Concurrently
+## Start Both Projects with Turbo
 
-We can also start both projects with one command using the `concurrently` package.
+We can also start both projects with one command using turborepo.
 
-You can find the setting inside the `package.json` file inside the root folder.
+You can find the setting inside the `turbo.json` file inside the root folder.
 
-```json
-{
-  "scripts": {
-    "frontend": "bun run dev --prefix ../frontend/",
-    "backend": "bun run dev --prefix ../backend/",
-    "clear": "cd frontend && rm -rf .next && rm -rf cache",
-    "setup:frontend": "cd frontend && bun run",
-    "setup:backend": "cd backend && bun run",
-    "setup": "bun run install && bun run setup:frontend && bun run setup:backend",
-    "dev": "bun run clear && concurrently \"cd frontend && bun run dev\" \"cd backend && bun run develop\""
-  },
-  "dependencies": {
-    "concurrently": "^7.6.0"
-  }
-}
-```
+- turbo dev
 
-Go to the root folder and install the package, `bun install`
+Go to the root folder and install the package, `yarn`
 You can start both apps by running `turbo dev`.
 
 ## FAQ
